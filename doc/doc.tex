@@ -28,6 +28,64 @@ Resuelve los siguientes ejercicios, incluye sus desarrollos en hojas aparte.
 		      \item Calcula el sesgo de cada estimador del área $A = \mu^2$.
 		      \item Determina cuál de los dos es mejor.
 	      \end{enumerate}
+	      \textbf{Explicación:} El estimador \(\hat{A}_1\) presenta un sesgo de \(\sigma^2/2\), menor que el sesgo de \(\hat{A}_2\) igual a \(\sigma^2\); por ello, \(\hat{A}_1\) se considera el mejor estimador (menor sesgo y menor MSE).
+\\[1em]
+\textbf{Solución paso a paso}
+
+Sea \(X\) la medición individual con
+\[
+E[X]=\mu,\quad \operatorname{Var}(X)=\sigma^{2},\quad X_1,X_2\ \text{i.i.d.}
+\]
+El área real es \(A=\mu^{2}\).
+
+\medskip
+\textbf{1. Sesgo de cada estimador}
+
+\[
+\hat A_{1}= \left(\frac{X_{1}+X_{2}}{2}\right)^{2}
+= \frac{1}{4}\bigl(X_{1}^{2}+2X_{1}X_{2}+X_{2}^{2}\bigr)
+\]
+\begin{align*}
+E[\hat A_{1}]
+&=\frac{1}{4}\bigl(E[X_{1}^{2}]+2E[X_{1}]E[X_{2}]+E[X_{2}^{2}]\bigr)\\
+&=\frac{1}{4}\bigl(2(\sigma^{2}+\mu^{2})+2\mu^{2}\bigr)
+=\mu^{2}+\frac{\sigma^{2}}{2}.
+\end{align*}
+\[
+\boxed{\operatorname{Bias}(\hat A_{1})=E[\hat A_{1}]-A=\frac{\sigma^{2}}{2}}
+\]
+
+\[
+\hat A_{2}= \frac{X_{1}^{2}+X_{2}^{2}}{2},\quad
+E[\hat A_{2}]
+=\frac{1}{2}\bigl(E[X_{1}^{2}]+E[X_{2}^{2}]\bigr)
+=\mu^{2}+\sigma^{2}.
+\]
+\[
+\boxed{\operatorname{Bias}(\hat A_{2})=\sigma^{2}}
+\]
+
+\medskip
+\textbf{2. Comparación de MSE}
+
+Para variables normales \(N(\mu,\sigma^{2})\), los sesgos y varianzas son:
+
+\[
+\begin{array}{lcc}
+\hline
+\text{Cantidad} & \hat A_{1} & \hat A_{2} \\
+\hline
+\text{Bias}  & \sigma^{2}/2 & \sigma^{2} \\
+\text{Varianza} & \sigma^{2}\bigl(\mu^{2}+\tfrac{\sigma^{2}}{2}\bigr)
+               & 2\,\sigma^{2}\bigl(\mu^{2}+\tfrac{\sigma^{2}}{2}\bigr) \\
+\text{MSE} = \mathrm{Var} + \mathrm{Bias}^{2}
+               & \sigma^{2}\bigl(\mu^{2}+\tfrac{\sigma^{2}}{2}\bigr)+\tfrac{\sigma^{4}}{4}
+               & 2\,\sigma^{2}\bigl(\mu^{2}+\tfrac{\sigma^{2}}{2}\bigr)+\sigma^{4} \\
+\hline
+\end{array}
+\]
+
+Claramente el MSE de \(\hat A_{1}\) es menor, por lo que \(\hat A_{1}\) es el estimador preferido.
 
 	\item (2 puntos) Una persona saca del cajero automático \$3,300. El cajero le entrega dos billetes de \$50, seis de \$200 y cuatro de \$500; mismos que guarda en su cartera. Todos los billetes son indistinguibles.
 
