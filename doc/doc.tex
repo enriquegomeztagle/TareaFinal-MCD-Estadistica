@@ -28,64 +28,67 @@ Resuelve los siguientes ejercicios, incluye sus desarrollos en hojas aparte.
 		      \item Calcula el sesgo de cada estimador del área $A = \mu^2$.
 		      \item Determina cuál de los dos es mejor.
 	      \end{enumerate}
+	      \begingroup\color{blue}
 	      \textbf{Explicación:} El estimador \(\hat{A}_1\) presenta un sesgo de \(\sigma^2/2\), menor que el sesgo de \(\hat{A}_2\) igual a \(\sigma^2\); por ello, \(\hat{A}_1\) se considera el mejor estimador (menor sesgo y menor MSE).
-\\[1em]
-\textbf{Solución paso a paso}
+	      \\[1em]
+	      \textbf{Solución paso a paso}
 
-Sea \(X\) la medición individual con
-\[
-E[X]=\mu,\quad \operatorname{Var}(X)=\sigma^{2},\quad X_1,X_2\ \text{i.i.d.}
-\]
-El área real es \(A=\mu^{2}\).
+	      Sea \(X\) la medición individual con
+	      \[
+		      E[X]=\mu,\quad \operatorname{Var}(X)=\sigma^{2},\quad X_1,X_2\ \text{i.i.d.}
+	      \]
+	      El área real es \(A=\mu^{2}\).
 
-\medskip
-\textbf{1. Sesgo de cada estimador}
+	      \medskip
+	      \textbf{1. Sesgo de cada estimador}
 
-\[
-\hat A_{1}= \left(\frac{X_{1}+X_{2}}{2}\right)^{2}
-= \frac{1}{4}\bigl(X_{1}^{2}+2X_{1}X_{2}+X_{2}^{2}\bigr)
-\]
-\begin{align*}
-E[\hat A_{1}]
-&=\frac{1}{4}\bigl(E[X_{1}^{2}]+2E[X_{1}]E[X_{2}]+E[X_{2}^{2}]\bigr)\\
-&=\frac{1}{4}\bigl(2(\sigma^{2}+\mu^{2})+2\mu^{2}\bigr)
-=\mu^{2}+\frac{\sigma^{2}}{2}.
-\end{align*}
-\[
-\boxed{\operatorname{Bias}(\hat A_{1})=E[\hat A_{1}]-A=\frac{\sigma^{2}}{2}}
-\]
+	      \[
+		      \hat A_{1}= \left(\frac{X_{1}+X_{2}}{2}\right)^{2}
+		      = \frac{1}{4}\bigl(X_{1}^{2}+2X_{1}X_{2}+X_{2}^{2}\bigr)
+	      \]
+	      \begin{align*}
+		      E[\hat A_{1}]
+		       & =\frac{1}{4}\bigl(E[X_{1}^{2}]+2E[X_{1}]E[X_{2}]+E[X_{2}^{2}]\bigr) \\
+		       & =\frac{1}{4}\bigl(2(\sigma^{2}+\mu^{2})+2\mu^{2}\bigr)
+		      =\mu^{2}+\frac{\sigma^{2}}{2}.
+	      \end{align*}
+	      \[
+		      \boxed{\operatorname{Bias}(\hat A_{1})=E[\hat A_{1}]-A=\frac{\sigma^{2}}{2}}
+	      \]
 
-\[
-\hat A_{2}= \frac{X_{1}^{2}+X_{2}^{2}}{2},\quad
-E[\hat A_{2}]
-=\frac{1}{2}\bigl(E[X_{1}^{2}]+E[X_{2}^{2}]\bigr)
-=\mu^{2}+\sigma^{2}.
-\]
-\[
-\boxed{\operatorname{Bias}(\hat A_{2})=\sigma^{2}}
-\]
+	      \[
+		      \hat A_{2}= \frac{X_{1}^{2}+X_{2}^{2}}{2},\quad
+		      E[\hat A_{2}]
+		      =\frac{1}{2}\bigl(E[X_{1}^{2}]+E[X_{2}^{2}]\bigr)
+		      =\mu^{2}+\sigma^{2}.
+	      \]
+	      \[
+		      \boxed{\operatorname{Bias}(\hat A_{2})=\sigma^{2}}
+	      \]
 
-\medskip
-\textbf{2. Comparación de MSE}
+	      \medskip
+	      \textbf{2. Comparación de MSE}
 
-Para variables normales \(N(\mu,\sigma^{2})\), los sesgos y varianzas son:
+	      Para variables normales \(N(\mu,\sigma^{2})\), los sesgos y varianzas son:
 
-\[
-\begin{array}{lcc}
-\hline
-\text{Cantidad} & \hat A_{1} & \hat A_{2} \\
-\hline
-\text{Bias}  & \sigma^{2}/2 & \sigma^{2} \\
-\text{Varianza} & \sigma^{2}\bigl(\mu^{2}+\tfrac{\sigma^{2}}{2}\bigr)
-               & 2\,\sigma^{2}\bigl(\mu^{2}+\tfrac{\sigma^{2}}{2}\bigr) \\
-\text{MSE} = \mathrm{Var} + \mathrm{Bias}^{2}
-               & \sigma^{2}\bigl(\mu^{2}+\tfrac{\sigma^{2}}{2}\bigr)+\tfrac{\sigma^{4}}{4}
-               & 2\,\sigma^{2}\bigl(\mu^{2}+\tfrac{\sigma^{2}}{2}\bigr)+\sigma^{4} \\
-\hline
-\end{array}
-\]
+	      \[
+		      \begin{array}{lcc}
+			      \hline
+			      \text{Cantidad} & \hat A_{1}                                                                & \hat A_{2} \\
+			      \hline
+			      \text{Bias}     & \sigma^{2}/2                                                              & \sigma^{2} \\
+			      \text{Varianza} & \sigma^{2}\bigl(\mu^{2}+\tfrac{\sigma^{2}}{2}\bigr)
+			                      & 2\,\sigma^{2}\bigl(\mu^{2}+\tfrac{\sigma^{2}}{2}\bigr)                                 \\
+			      \text{MSE} = \mathrm{Var} + \mathrm{Bias}^{2}
+			                      & \sigma^{2}\bigl(\mu^{2}+\tfrac{\sigma^{2}}{2}\bigr)+\tfrac{\sigma^{4}}{4}
+			                      & 2\,\sigma^{2}\bigl(\mu^{2}+\tfrac{\sigma^{2}}{2}\bigr)+\sigma^{4}                      \\
+			      \hline
+		      \end{array}
+	      \]
 
-Claramente el MSE de \(\hat A_{1}\) es menor, por lo que \(\hat A_{1}\) es el estimador preferido.
+	      Claramente el MSE de \(\hat A_{1}\) es menor, por lo que \(\hat A_{1}\) es el estimador preferido.\\
+	      Esta conclusión también fue respaldada empíricamente mediante simulaciones computacionales desarrolladas, confirmando que \(\hat A_1\) presenta un menor error cuadrático medio bajo diversas condiciones de entrada.
+	      \endgroup
 
 	\item (2 puntos) Una persona saca del cajero automático \$3,300. El cajero le entrega dos billetes de \$50, seis de \$200 y cuatro de \$500; mismos que guarda en su cartera. Todos los billetes son indistinguibles.
 
@@ -95,6 +98,45 @@ Claramente el MSE de \(\hat A_{1}\) es menor, por lo que \(\hat A_{1}\) es el es
 		            cada muestra de tamaño 2. Obtenga la distribución de muestreo de $T$.
 		      \item Calcule el valor esperado y la varianza de $T$.
 	      \end{enumerate}
+
+	      \textcolor{blue}{
+		      \begin{minipage}{\linewidth}
+			      \textcolor{blue}{\textbf{Solución:}} \\
+			      \textcolor{blue}{El siguiente análisis se llevó a cabo mediante procedimientos computacionales estadísticos, lo cual permitió obtener la distribución de muestreo de la variable aleatoria \(T\), que representa el monto total al sacar dos billetes al azar sin reemplazo.}
+			      \begin{itemize}
+				      \item \textbf{Definición de los billetes:} Se construyó el conjunto \( \texttt{bills} = \{50, 50, 200, 200, 200, 200, 200, 200, 500, 500, 500, 500\} \).
+				      \item \textbf{Combinaciones sin reemplazo:} Se generaron todas las combinaciones posibles de dos elementos del conjunto sin reemplazo. El número total de combinaciones se determinó mediante \( \binom{12}{2} = 66 \).
+				      \item \textbf{Cálculo de montos:} A cada combinación \( (x_i, x_j) \) se le asignó el valor \( T = x_i + x_j \).
+				      \item \textbf{Frecuencias y probabilidades:} Se construyó una tabla de frecuencias \( f_T \) y se calcularon las probabilidades relativas mediante \( p_T = \frac{f_T}{66} \).
+			      \end{itemize}
+		      \end{minipage}
+	      }
+
+	      \textcolor{blue}{Los resultados obtenidos fueron:}
+
+	      \begin{center}
+		      \begin{tabular}{|c|c|c|}
+			      \hline
+			      \textcolor{blue}{\textbf{Total (\$)}} & \textcolor{blue}{\textbf{Frecuencia}} & \textcolor{blue}{\textbf{Probabilidad}} \\
+			      \hline
+			      \textcolor{blue}{100}                 & \textcolor{blue}{1}                   & \textcolor{blue}{0.0152}                \\
+			      \textcolor{blue}{250}                 & \textcolor{blue}{12}                  & \textcolor{blue}{0.1818}                \\
+			      \textcolor{blue}{400}                 & \textcolor{blue}{15}                  & \textcolor{blue}{0.2273}                \\
+			      \textcolor{blue}{550}                 & \textcolor{blue}{8}                   & \textcolor{blue}{0.1212}                \\
+			      \textcolor{blue}{700}                 & \textcolor{blue}{24}                  & \textcolor{blue}{0.3636}                \\
+			      \textcolor{blue}{1000}                & \textcolor{blue}{6}                   & \textcolor{blue}{0.0909}                \\
+			      \hline
+		      \end{tabular}
+	      \end{center}
+
+	      \textcolor{blue}{Con base en esta distribución, se calcularon las siguientes medidas:}
+
+	      \[
+		      \textcolor{blue}{\mathbb{E}[T] = \sum_i t_i \cdot p_i = 550} \\
+		      \textcolor{blue}{\mathbb{V}[T] = \sum_i t_i^2 \cdot p_i - (\mathbb{E}[T])^2 \approx 51136.36}
+	      \]
+
+	      \textcolor{blue}{donde \(t_i\) son los montos totales posibles y \(p_i\) sus respectivas probabilidades.}
 
 	\item (2 puntos) Un nuevo medicamento está siendo desarrollado en un laboratorio. Se toma una muestra de 10 pacientes similares para probar dicho medicamento. En cada paciente se midió el tiempo de recuperación en días obteniéndose los siguientes valores:
 
@@ -111,6 +153,92 @@ Claramente el MSE de \(\hat A_{1}\) es menor, por lo que \(\hat A_{1}\) es el es
 		            construcción de un intervalo de confianza al 98\%.
 		      \item ¿Cuál es el tamaño de muestra necesario para afirmar, con una probabilidad de 0.9 que el tiempo promedio estimado de recuperación no dista del tiempo real de recuperación en más de 3 días?
 	      \end{enumerate}
+\begingroup\color{blue}
+
+\textcolor{blue}{\textbf{Solución:}} \\
+	Tiempos de recuperación (en días)
+	\(10,\;10,\;7,\;12,\;5,\;7,\;2,\;1,\;7,\;2\).
+
+\vspace{0.5em}
+\textbf{Estadísticos muestrales}
+
+\[
+n = 10,
+\quad
+\bar X = 6.3,
+\quad
+s = 3.773.
+\]
+
+\subsubsection*{A. Intervalo de confianza del 95\,\% para \(\mu\)}
+
+Para varianza desconocida utilizamos la distribución \(t\) con
+\( \nu=n-1=9\).
+
+\[
+t_{0.975,9}=2.262,
+\quad
+\text{M.E.}=t_{0.975,9}\,\frac{s}{\sqrt{n}}
+            =2.262\;\frac{3.773}{\sqrt{10}}=2.699.
+\]
+
+\[
+\boxed{ \mu \in (\,\bar X-\text{M.E.},\;\bar X+\text{M.E.}\,)
+        =(3.60,\;9.00)\ \text{días} }_{95\%}
+\]
+
+%-------------------------------------------------
+\subsubsection*{B. ¿Se lanza el medicamento? \;IC al 98\,\% para \(\sigma\)}
+
+Para la desviación estándar usamos la distribución
+\(\chi^{2}_{(\nu)}\) con \(\nu = 9\) y \(\alpha=0.02\).
+
+\[
+\chi^{2}_{0.01,9}=21.666,
+\quad
+\chi^{2}_{0.99,9}=2.088.
+\]
+
+\[
+\sigma \in
+\Bigl(
+\sqrt{\tfrac{(n-1)s^{2}}{\chi^{2}_{0.01,9}}},
+\;
+\sqrt{\tfrac{(n-1)s^{2}}{\chi^{2}_{0.99,9}}}
+\Bigr)
+=(2.43,\;7.83)\ \text{días}\quad(98\%).
+\]
+
+Como todo el intervalo está por encima de 2\,días, la evidencia
+indica que \(\sigma>2\).
+\[
+\boxed{\text{El laboratorio \emph{no} debería lanzar el medicamento}.}
+\]
+
+%-------------------------------------------------
+\subsubsection*{C. Tamaño muestral para un error \(\le 3\) días con 90\,\% de confianza}
+
+Deseamos
+\(\Pr\bigl(|\bar X-\mu|\le 3\bigr)=0.9\).
+Para un nivel de confianza del 90\,\% usamos
+\(z_{0.95}=1.645\) y aproximamos \(\sigma\) con \(s\):
+
+\[
+n \;\ge\;
+\Bigl(\frac{z_{0.95}\,s}{d}\Bigr)^{2}
+=
+\Bigl(\frac{1.645\times3.773}{3}\Bigr)^{2}
+\approx 4.28.
+\]
+
+\[
+\boxed{n_{\min}=5}
+\]
+
+Por lo tanto, con al menos cinco pacientes se garantiza que la estimación del
+tiempo promedio de recuperación queda a no más de 3\,días del valor real con
+una confianza del 90\,\%.
+\endgroup
 
 	\item (2 puntos) Por la temporada navideña una tienda departamental recibe un lote de chocolates en forma de Santa Claus. El gerente de compras desea estimar la proporción de chocolates rotos en el lote, para ello toma una muestra aleatoria de 100 chocolates, de los cuales 10 están rotos.
 
