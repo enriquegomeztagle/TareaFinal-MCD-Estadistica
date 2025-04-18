@@ -296,7 +296,7 @@ Resuelve los siguientes ejercicios, incluye sus desarrollos en hojas aparte.
 		      \text{valor-}p \;=\; P(Z>2.294)\;=\;0.0109.
 	      \]
 
-	      Como \(p\text{-value} < 0.05\), se **rechaza** \(H_0\).
+	      Como \(p\text{-value} < 0.05\), se \textbf{rechaza} \(H_0\).
 
 	      %-------------------------------------------------
 	      \subsubsection*{C. Recomendación}
@@ -319,6 +319,49 @@ Resuelve los siguientes ejercicios, incluye sus desarrollos en hojas aparte.
 		            incrementado el consumo de agua?
 		      \item Calcule e interprete el valor-p.
 	      \end{enumerate}
+
+	      \begingroup\color{blue}
+	      \textbf{Solución:}\\
+	      Consumo muestral (en litros): $1.5,\,1.6,\,1.5,\,1.4,\,1.9,\,1.4,\,1.3,\,1.9,\,1.8,\,1.7$.
+
+	      \vspace{0.5em}
+	      \textbf{Estadísticos muestrales}
+	      \[
+		      n = 10, \quad \bar X = 1.60, \quad s = 0.216.
+	      \]
+
+	      %-------------------------------------------------
+	      \subsubsection*{A. Prueba unilateral al 1\,\%}
+
+	      Hipótesis
+	      \[
+		      H_0 : \mu = 1.4 \qquad\qquad
+		      H_1 : \mu > 1.4.
+	      \]
+
+	      Estadístico
+	      \[
+		      t_{\text{obs}} \;=\;
+		      \frac{\bar X - 1.4}{s/\sqrt{n}}
+		      = 2.93.
+	      \]
+
+	      Valor crítico para $\alpha = 0.01$ (gl $=9$):
+	      \[
+		      t_{0.99,9} = 2.82.
+	      \]
+
+	      Como $t_{\text{obs}} > t_{0.99,9}$, se \textbf{rechaza} $H_0$.
+
+	      %-------------------------------------------------
+	      \subsubsection*{B. Valor‑$p$}
+
+	      \[
+		      p = P\bigl(T_{9} > 2.93\bigr) \approx 0.0084.
+	      \]
+
+	      La probabilidad de observar una media tan alta o mayor si $\mu = 1.4$ L es solo 0.84 \%, por lo que existe evidencia al 1 \% de significancia de que el consumo medio de agua ha aumentado.
+	      \endgroup
 \end{enumerate}
 
 \section*{Parte B: Opción múltiple (1 punto)}
