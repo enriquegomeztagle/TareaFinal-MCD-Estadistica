@@ -27,4 +27,3 @@ variance <- expected_value_sq - expected_value^2
 
 cat("\nExpected value E[T]:", expected_value, "\n")
 cat("Variance Var[T]:", variance, "\n")
-
