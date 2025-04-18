@@ -1,14 +1,6 @@
 #!/bin/bash
 
-echo "🛠️ Choose your change description mode:"
-echo "1) Generic description for all changes"
-echo "2) Custom description"
-read -p "Enter your choice (1 or 2): " choice
-
-if [ "$choice" == "2" ]; then
-  read -p "🔤 Enter a short description for your changes: " CUSTOM_DESC
-  DESCRIPTION=$CUSTOM_DESC
-fi
+read -p "🔤 Enter a short description for your changes (this will be used as the branch name): " DESCRIPTION
 
 BRANCH_NAME=$DESCRIPTION
 
