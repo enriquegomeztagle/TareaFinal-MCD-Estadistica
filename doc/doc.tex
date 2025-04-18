@@ -153,92 +153,92 @@ Resuelve los siguientes ejercicios, incluye sus desarrollos en hojas aparte.
 		            construcción de un intervalo de confianza al 98\%.
 		      \item ¿Cuál es el tamaño de muestra necesario para afirmar, con una probabilidad de 0.9 que el tiempo promedio estimado de recuperación no dista del tiempo real de recuperación en más de 3 días?
 	      \end{enumerate}
-\begingroup\color{blue}
+	      \begingroup\color{blue}
 
-\textcolor{blue}{\textbf{Solución:}} \\
-	Tiempos de recuperación (en días)
-	\(10,\;10,\;7,\;12,\;5,\;7,\;2,\;1,\;7,\;2\).
+	      \textcolor{blue}{\textbf{Solución:}} \\
+	      Tiempos de recuperación (en días)
+	      \(10,\;10,\;7,\;12,\;5,\;7,\;2,\;1,\;7,\;2\).
 
-\vspace{0.5em}
-\textbf{Estadísticos muestrales}
+	      \vspace{0.5em}
+	      \textbf{Estadísticos muestrales}
 
-\[
-n = 10,
-\quad
-\bar X = 6.3,
-\quad
-s = 3.773.
-\]
+	      \[
+		      n = 10,
+		      \quad
+		      \bar X = 6.3,
+		      \quad
+		      s = 3.773.
+	      \]
 
-\subsubsection*{A. Intervalo de confianza del 95\,\% para \(\mu\)}
+	      \subsubsection*{A. Intervalo de confianza del 95\,\% para \(\mu\)}
 
-Para varianza desconocida utilizamos la distribución \(t\) con
-\( \nu=n-1=9\).
+	      Para varianza desconocida utilizamos la distribución \(t\) con
+	      \( \nu=n-1=9\).
 
-\[
-t_{0.975,9}=2.262,
-\quad
-\text{M.E.}=t_{0.975,9}\,\frac{s}{\sqrt{n}}
-            =2.262\;\frac{3.773}{\sqrt{10}}=2.699.
-\]
+	      \[
+		      t_{0.975,9}=2.262,
+		      \quad
+		      \text{M.E.}=t_{0.975,9}\,\frac{s}{\sqrt{n}}
+		      =2.262\;\frac{3.773}{\sqrt{10}}=2.699.
+	      \]
 
-\[
-\boxed{ \mu \in (\,\bar X-\text{M.E.},\;\bar X+\text{M.E.}\,)
-        =(3.60,\;9.00)\ \text{días} }_{95\%}
-\]
+	      \[
+		      \boxed{ \mu \in (\,\bar X-\text{M.E.},\;\bar X+\text{M.E.}\,)
+			      =(3.60,\;9.00)\ \text{días} }_{95\%}
+	      \]
 
-%-------------------------------------------------
-\subsubsection*{B. ¿Se lanza el medicamento? \;IC al 98\,\% para \(\sigma\)}
+	      %-------------------------------------------------
+	      \subsubsection*{B. ¿Se lanza el medicamento? \;IC al 98\,\% para \(\sigma\)}
 
-Para la desviación estándar usamos la distribución
-\(\chi^{2}_{(\nu)}\) con \(\nu = 9\) y \(\alpha=0.02\).
+	      Para la desviación estándar usamos la distribución
+	      \(\chi^{2}_{(\nu)}\) con \(\nu = 9\) y \(\alpha=0.02\).
 
-\[
-\chi^{2}_{0.01,9}=21.666,
-\quad
-\chi^{2}_{0.99,9}=2.088.
-\]
+	      \[
+		      \chi^{2}_{0.01,9}=21.666,
+		      \quad
+		      \chi^{2}_{0.99,9}=2.088.
+	      \]
 
-\[
-\sigma \in
-\Bigl(
-\sqrt{\tfrac{(n-1)s^{2}}{\chi^{2}_{0.01,9}}},
-\;
-\sqrt{\tfrac{(n-1)s^{2}}{\chi^{2}_{0.99,9}}}
-\Bigr)
-=(2.43,\;7.83)\ \text{días}\quad(98\%).
-\]
+	      \[
+		      \sigma \in
+		      \Bigl(
+		      \sqrt{\tfrac{(n-1)s^{2}}{\chi^{2}_{0.01,9}}},
+		      \;
+		      \sqrt{\tfrac{(n-1)s^{2}}{\chi^{2}_{0.99,9}}}
+		      \Bigr)
+		      =(2.43,\;7.83)\ \text{días}\quad(98\%).
+	      \]
 
-Como todo el intervalo está por encima de 2\,días, la evidencia
-indica que \(\sigma>2\).
-\[
-\boxed{\text{El laboratorio \emph{no} debería lanzar el medicamento}.}
-\]
+	      Como todo el intervalo está por encima de 2\,días, la evidencia
+	      indica que \(\sigma>2\).
+	      \[
+		      \boxed{\text{El laboratorio \emph{no} debería lanzar el medicamento}.}
+	      \]
 
-%-------------------------------------------------
-\subsubsection*{C. Tamaño muestral para un error \(\le 3\) días con 90\,\% de confianza}
+	      %-------------------------------------------------
+	      \subsubsection*{C. Tamaño muestral para un error \(\le 3\) días con 90\,\% de confianza}
 
-Deseamos
-\(\Pr\bigl(|\bar X-\mu|\le 3\bigr)=0.9\).
-Para un nivel de confianza del 90\,\% usamos
-\(z_{0.95}=1.645\) y aproximamos \(\sigma\) con \(s\):
+	      Deseamos
+	      \(\Pr\bigl(|\bar X-\mu|\le 3\bigr)=0.9\).
+	      Para un nivel de confianza del 90\,\% usamos
+	      \(z_{0.95}=1.645\) y aproximamos \(\sigma\) con \(s\):
 
-\[
-n \;\ge\;
-\Bigl(\frac{z_{0.95}\,s}{d}\Bigr)^{2}
-=
-\Bigl(\frac{1.645\times3.773}{3}\Bigr)^{2}
-\approx 4.28.
-\]
+	      \[
+		      n \;\ge\;
+		      \Bigl(\frac{z_{0.95}\,s}{d}\Bigr)^{2}
+		      =
+		      \Bigl(\frac{1.645\times3.773}{3}\Bigr)^{2}
+		      \approx 4.28.
+	      \]
 
-\[
-\boxed{n_{\min}=5}
-\]
+	      \[
+		      \boxed{n_{\min}=5}
+	      \]
 
-Por lo tanto, con al menos cinco pacientes se garantiza que la estimación del
-tiempo promedio de recuperación queda a no más de 3\,días del valor real con
-una confianza del 90\,\%.
-\endgroup
+	      Por lo tanto, con al menos cinco pacientes se garantiza que la estimación del
+	      tiempo promedio de recuperación queda a no más de 3\,días del valor real con
+	      una confianza del 90\,\%.
+	      \endgroup
 
 	\item (2 puntos) Por la temporada navideña una tienda departamental recibe un lote de chocolates en forma de Santa Claus. El gerente de compras desea estimar la proporción de chocolates rotos en el lote, para ello toma una muestra aleatoria de 100 chocolates, de los cuales 10 están rotos.
 
@@ -249,6 +249,64 @@ una confianza del 90\,\%.
 		            de chocolates rotos. Plantea el problema como una prueba de hipótesis.
 		      \item ¿Cuál sería la recomendación al gerente de compras?
 	      \end{enumerate}
+
+	      \begingroup\color{blue}
+	      \textbf{Solución:}
+
+	      Sea \(n = 100\) el tamaño de la muestra y \(x = 10\) los chocolates rotos.
+	      Por tanto, la proporción muestral es  \(\hat{p} = \dfrac{10}{100} = 0.10.\)
+
+	      %-------------------------------------------------
+	      \subsubsection*{A. Intervalo de confianza del 95\,\% para \(p\)}
+
+	      \[
+		      \hat{p} \;\pm\; z_{0.975}\;
+		      \sqrt{\frac{\hat{p}\,(1-\hat{p})}{n}},
+		      \qquad z_{0.975}=1.96.
+	      \]
+
+	      \[
+		      \text{M.E.}= 1.96
+		      \sqrt{\frac{0.10\,\cdot\,0.90}{100}}
+		      = 0.0588.
+	      \]
+
+	      \[
+		      \boxed{p \in (0.041,\; 0.159)}_{95\%}
+	      \]
+
+	      %-------------------------------------------------
+	      \subsubsection*{B. Prueba de hipótesis}
+
+	      \[
+		      H_0 : p \le 0.05
+		      \qquad\qquad
+		      H_1 : p > 0.05
+	      \]
+
+	      Estadístico:
+	      \[
+		      z \;=\;
+		      \frac{\hat{p}-0.05}{
+			      \sqrt{\dfrac{0.05\cdot0.95}{100}}}
+		      = 2.294.
+	      \]
+
+	      \[
+		      \text{valor-}p \;=\; P(Z>2.294)\;=\;0.0109.
+	      \]
+
+	      Como \(p\text{-value} < 0.05\), se **rechaza** \(H_0\).
+
+	      %-------------------------------------------------
+	      \subsubsection*{C. Recomendación}
+
+	      \[
+		      \boxed{\text{Se recomienda devolver el lote, pues la proporción
+				      de chocolates rotos supera el 5\,\%.}}
+	      \]
+
+	      \endgroup
 
 	\item (1 punto) La cantidad de agua consumida por un adulto sano sigue una distribución Normal con media de 1.4 litros. Una campaña de salud promueve el consumo de cuando menos 2 litros diarios. Después de la campaña, una muestra de 10 adultos muestra el siguiente consumo en litros:
 
