@@ -1,6 +1,7 @@
 #!/bin/bash
 
 read -p "🔤 Enter a short description for your changes (this will be used as the branch name): " DESCRIPTION
+DESCRIPTION=${DESCRIPTION:-default-branch}
 
 BRANCH_NAME=$DESCRIPTION
 
